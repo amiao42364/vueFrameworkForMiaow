@@ -1,11 +1,70 @@
 {
-    "files": [],
-    "references": [
-        {
-            "path": "./tsconfig.node.json"
+    // https://www.typescriptlang.org/tsconfig
+    "compilerOptions": {
+        // 只编译修改过的文件,这个时候会生成tsconfig.tsbuildinfo,下次编译的时候会进行对比只编译修改过的文件
+        "incremental": true,
+        // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
+        "target": "ESNext",
+        // 指定使用模块: 'CommonJS', 'AMD', 'System', 'UMD' or 'ESNext'
+        "module": "ESNext",
+        // lib库
+        "lib": [
+            "ESNext",
+            "ScriptHost",
+            "WebWorker",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        // 允许编译JS
+        "allowJs": true,
+        // 是否检测JS的语法
+        "checkJs": true,
+        // 指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
+        "jsx": "preserve",
+        // 如果设为true，编译每个ts文件或js文件之后会生成一个声明文件
+        "declaration": true,
+        // 值为true或false，指定是否为声明文件.d.ts生成map文件
+        "declarationMap": true,
+        // 用来指定编译时是否生成.map文件
+        "sourceMap": true,
+        // 编译后的文件存到到哪个目录下,默认是每一个ts文件的当前目录,下面的配置就是把ts编译到dist目录下
+        "outDir": "dist",
+        // 编译的时候删除注释
+        "removeComments": true,
+        // 是否引入npm包tslib中的辅助函数,__extends等
+        "importHelpers": true,
+        // 严格模式
+        "strict": true,
+        // 用于选择模块解析策略
+        "moduleResolution": "nodenext",
+        // 复杂的很 下面单独介绍这三个模块
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
         },
-        {
-            "path": "./tsconfig.app.json"
-        }
+//        "rootDirs": [
+//            "src"
+//        ],
+        // 用来指定允许从没有默认导出的模块中默认导入
+        "allowSyntheticDefaultImports": true,
+        // 通过为导入内容创建命名空间，实现CommonJS和ES模块之间的互操作性
+        "esModuleInterop": true,
+        // experimentalDecorators用于指定是否启用实验性的装饰器特性
+        "experimentalDecorators": true,
+        "skipLibCheck": true
+    },
+    // 指定需要编译文件 否则默认当前目录下除了exclude之外的所有.ts, .d.ts,.tsx 文件
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    // 不编译某些文件
+    "exclude": [
+        "node_modules"
     ]
 }
