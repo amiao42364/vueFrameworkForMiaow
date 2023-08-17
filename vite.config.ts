@@ -1,12 +1,5 @@
 import {defineConfig, loadEnv} from 'vite';
-import autoImport from 'unplugin-auto-import/vite';
-import {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
-import setupExtend from 'vite-plugin-vue-setup-extend';
 import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import windiCSS from 'vite-plugin-windicss';
-import legacy from '@vitejs/plugin-legacy';
-import checker from 'vite-plugin-checker';
 import path from 'path';
 
 // https://cn.vitejs.dev/config/
@@ -62,40 +55,28 @@ export default defineConfig(({ command, mode }) => {
         },
         plugins: [
             vue(),
-            vueJsx(),
-            windiCSS(),
-            legacy({
-                targets: ['defaults', 'not IE 11']
-            }),
-            // https://github.com/fi3ework/vite-plugin-checker
-            checker({
-                typescript: true,
-                // vueTsc: true,
-                eslint: {
-                    lintCommand: 'eslint "./src/**/*.{.vue,ts,tsx}"' // for example, lint .ts & .tsx
-                }
-            }),
-            autoImport({
-                include: [
-                    /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-                    /\.vue$/,
-                    /\.vue\?vue/, // .vue
-                    /\.md$/ // .md
-                ],
-                dts: true,
-                imports: ['vue', 'vue-router']
-            }),
-            createSvgIconsPlugin({
-                iconDirs: [path.resolve(process.cwd(), 'src/assets/icons/svg')],
-                symbolId: 'icon-[dir]-[name]',
-                svgoOptions: command === 'build'
-            }),
-            setupExtend()
+            // vueJsx(),
+            // windiCSS(),
+            // legacy({
+            //     targets: ['defaults', 'not IE 11']
+            // }),
+            // autoImport({
+            //     imports: ['vue', 'vue-router', 'pinia'],
+            //     dts: false
+            // }),
+            // createSvgIconsPlugin({
+            //     iconDirs: [path.resolve(process.cwd(), 'src/assets/icons/svg')],
+            //     symbolId: 'icon-[dir]-[name]',
+            //     svgoOptions: command === 'build'
+            // }),
+            // setupExtend()
         ],
         resolve: {
             alias: {
+                // 设置路径
+                '~': path.resolve(__dirname, './'),
                 // 设置别名
-                "@": path.join(__dirname, "./src")
+                '@': path.resolve(__dirname, './src')
             }
         },
         build: {
