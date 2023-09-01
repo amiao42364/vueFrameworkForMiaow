@@ -498,7 +498,7 @@ import {
 } from '@/api/system/user'
 import { useRouter } from 'vue-router'
 import { getCurrentInstance, reactive, ref, toRefs, watch } from 'vue'
-import {parseTime} from "@/utils/ruoyi";
+import {parseTime} from "@/utils/miaow";
 import {UploadFilled} from "@element-plus/icons-vue";
 
 const router = useRouter()

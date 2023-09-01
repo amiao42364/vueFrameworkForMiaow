@@ -27,7 +27,7 @@ import {
     resetForm,
     selectDictLabel,
     selectDictLabels
-} from '@/utils/ruoyi'
+} from '@/utils/miaow'
 
 // 分页组件
 import Pagination from '@/components/Pagination'

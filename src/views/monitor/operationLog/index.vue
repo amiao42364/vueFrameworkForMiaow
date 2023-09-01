@@ -257,7 +257,7 @@
 <script name="Operlog" setup>
 import { list, delOperationLog, cleanOperationLog } from '@/api/monitor/operationLog'
 import {getCurrentInstance, reactive, ref, toRefs} from "vue";
-import {parseTime} from "../../../utils/ruoyi";
+import {parseTime} from "../../../utils/miaow";
 
 const { proxy } = getCurrentInstance()
 const { sys_operation_type, sys_common_status } = proxy.useDict('sys_operation_type', 'sys_common_status')

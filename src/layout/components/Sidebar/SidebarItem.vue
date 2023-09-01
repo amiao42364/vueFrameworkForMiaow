@@ -50,7 +50,7 @@
 <script setup>
 import { isExternal } from '@/utils/validate'
 import AppLink from './Link'
-import { getNormalPath } from '@/utils/ruoyi'
+import { getNormalPath } from '@/utils/miaow'
 import { ref } from 'vue'
 
 const props = defineProps({

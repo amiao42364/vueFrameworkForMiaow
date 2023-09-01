@@ -1,7 +1,3 @@
-/**
- * 通用js方法封装处理
- * Copyright (c) 2019 ruoyi
- */
 
 // 日期格式化
 export function parseTime(time, pattern) {

@@ -331,7 +331,7 @@ import {
 import { roleMenuTreeSelect, treeSelect as menuTreeselect } from '@/api/system/menu'
 import { useRouter } from 'vue-router'
 import { getCurrentInstance, nextTick, reactive, ref, toRefs } from 'vue'
-import {parseTime} from "@/utils/ruoyi";
+import {parseTime} from "@/utils/miaow";
 import {QuestionFilled} from "@element-plus/icons-vue";
 
 const router = useRouter()

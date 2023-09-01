@@ -6,7 +6,7 @@
             :rules="registerRules"
             class="register-form"
         >
-            <h3 class="title">若依后台管理系统</h3>
+            <h3 class="title">喵喵后台管理系统</h3>
             <el-form-item prop="username">
                 <el-input
                     v-model="registerForm.username"
@@ -83,7 +83,7 @@
         </el-form>
         <!--  底部  -->
         <div class="el-register-footer">
-            <span>Copyright © 2018-2023 ruoyi.vip All Rights Reserved.</span>
+            <span>Copyright © 2018-2023 miaow All Rights Reserved.</span>
         </div>
     </div>
 </template>
@@ -138,7 +138,7 @@ function handleRegister() {
         if (valid) {
             loading.value = true
             register(registerForm.value)
-                .then((res) => {
+                .then(() => {
                     const username = registerForm.value.username
                     ElMessageBox.alert(
                         "<font color='red'>恭喜你，您的账号 " + username + ' 注册成功！</font>',

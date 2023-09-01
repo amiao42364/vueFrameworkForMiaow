@@ -69,7 +69,7 @@
 <script setup>
 import { authUserSelectAll, unallocatedUserList } from '@/api/system/role'
 import { getCurrentInstance, reactive, ref } from 'vue'
-import { parseTime } from '@/utils/ruoyi'
+import { parseTime } from '@/utils/miaow'
 
 const props = defineProps({
     roleId: {
